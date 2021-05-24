@@ -4,7 +4,7 @@ function Console(name) {
 }
 
 Console.prototype.log = function (...object) {
-  let obj = JSON.stringify(object);
+  let obj = JSON.stringify(...object);
   let item = `${this.name}: ${obj}`;
   this.historyArr.push(item);
   return item;
