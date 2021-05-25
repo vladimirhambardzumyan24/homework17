@@ -33,8 +33,8 @@ class Account {
     return this._balance;
   }
   debit(amount) {
-    if (this._balance < amount) {
-      return amount - this._balance;
+    if (this._balance > amount) {
+      return this._balance-amount ;
     } else {
       return "Amount exceeded balance.";
     }
