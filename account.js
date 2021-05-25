@@ -54,10 +54,7 @@ class Account {
   }
 
   static identifyAccounts(accountFirst, accountSecond) {
-    if (
-      accountFirst.name === accountSecond.name &&
-      accountSecond.balance === accountFirst.balance
-    ) {
+    if (accountFirst.name === accountSecond.name) {
       return true;
     }
     return false;
