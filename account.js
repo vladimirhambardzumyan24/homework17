@@ -34,7 +34,7 @@ class Account {
   }
   debit(amount) {
     if (this._balance > amount) {
-      return this._balance-amount ;
+      return this._balance - amount;
     } else {
       return "Amount exceeded balance.";
     }
@@ -54,7 +54,10 @@ class Account {
   }
 
   static identifyAccounts(accountFirst, accountSecond) {
-    if (accountFirst === accountSecond) {
+    if (
+      accountFirst.name === accountSecond.name &&
+      accountSecond.balance === accountFirst.balance
+    ) {
       return true;
     }
     return false;
@@ -70,7 +73,7 @@ console.log(savingAcc.credit(400)); // 2400
 console.log(savingAcc.balance); // 2400
 console.log(savingAcc.debit(9000)); //6600
 console.log(savingAcc.transferTo(cardAcc, 1000)); // 1400
-let anotherAcc = savingAcc;
-console.log(Account.identifyAccounts(savingAcc, anotherAcc)); // true
+console.log(savingAcc);
+console.log(cardAcc);
 console.log(Account.identifyAccounts(savingAcc, cardAcc)); // false
 console.log(savingAcc.toString()); // Saving account's account balance is $1400.
